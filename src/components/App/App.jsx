@@ -12,9 +12,9 @@ useEffect(() => {
   fetchPhotos();
 }, [])
 
-useEffect(() => {
-  console.log(gallery);
-}, [gallery])
+// useEffect(() => {
+//   console.log(gallery);
+// }, [gallery])
   
 function fetchPhotos (){
 
