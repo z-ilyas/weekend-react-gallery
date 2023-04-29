@@ -12,11 +12,7 @@ useEffect(() => {
   fetchPhotos();
 }, [])
 
-// useEffect(() => {
-//   console.log(gallery);
-// }, [gallery])
-  
-function fetchPhotos (){
+const fetchPhotos = () => {
 
     axios({
         method: 'GET',
@@ -38,6 +34,7 @@ function fetchPhotos (){
         <img src="images/work_out.jpg"/> */}
       <GalleryList 
         gallery = {gallery}
+        fetchPhotos = {fetchPhotos}
       />
       </div>
     );
