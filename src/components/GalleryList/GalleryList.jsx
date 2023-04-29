@@ -8,6 +8,7 @@ function GalleryList(props) {
           props.gallery.map((pic) => {
             return (
               <GalleryItem
+                key={pic.id}
                 pic = {pic}
                 fetchPhotos = {props.fetchPhotos}
               />
