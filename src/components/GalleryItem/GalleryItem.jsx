@@ -29,24 +29,24 @@ const showStuff = (pics, descriptions, id) => {
 if(!Description){
     return(
         <>
-        < div className='gallery' key={id}>
+        < div className='pic' key={id}>
         <img src = {pics} 
             onClick={flipImage}
         />
         </div>
         <div>
-            <button onClick={() => {countLikes(id)}}>👍🏾</button>
+        <button onClick={() => {countLikes(id)}}>👍🏾</button>
         </div>
         </>
     )
 }else{
     return(
         <>
-        < div className='gallery' key={id}>
-        {descriptions}
+        < div className='descriptions' key={id}>
+        <p>{descriptions}</p>
         </div>
         <div>
-            <button onClick={(event) => {countLikes(id)}}>👍🏾</button>
+        <button onClick={(event) => {countLikes(id)}}>👍🏾</button>
         </div>
         </>
     )
