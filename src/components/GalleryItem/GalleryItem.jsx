@@ -25,40 +25,40 @@ function countLikes(likeId) {
             console.log('uh no, you have no Likes:', error);
         })
 }
-const showStuff = (pics, descriptions, id) => {
+
+const showStuff = (pics, descriptions, id, likes) => {
 if(!Description){
     return(
-        <>
-        < div className='pic' key={id}>
+    <div className='parent'>
+        <div className='pics' key={id}>
         <img src = {pics} 
             onClick={flipImage}
         />
-        </div>
-        <div>
         <button onClick={() => {countLikes(id)}}>👍🏾</button>
         </div>
-        </>
+        <div className='likes'>
+        <p>{likes} People are Smashing the Button</p> 
+       </div>
+    </div>
     )
 }else{
     return(
-        <>
-        < div className='descriptions' key={id}>
+    <div className='parent'>
+        <div className='descriptions' key={id}>
         <p>{descriptions}</p>
+        <button onClick={() => {countLikes(id)}}>👍🏾</button>
         </div>
-        <div>
-        <button onClick={(event) => {countLikes(id)}}>👍🏾</button>
+        <div className='likes'>
+        <p>{likes} People are Smashing the Button</p> 
         </div>
-        </>
+    </div>
     )
 }
 }
 
 return (
         <>
-        {showStuff(props.pic.path, props.pic.description, props.pic.id)}
-        <div>
-           <p>{props.pic.likes} People are Smashing the Button</p> 
-        </div>
+        {showStuff(props.pic.path, props.pic.description, props.pic.id, props.pic.likes)}
         </>
     )
 }
